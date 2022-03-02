@@ -1,0 +1,30 @@
+
+{% extends 'base.html' %}
+{% block content %}
+<table class="table table-dark table-striped"> 
+    <thead>
+        <tr>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+        </tr>
+    </thead>
+    {% for s in object_list %}
+    <tr>
+    <td>{{s.first_name}}</td>
+    <td>{{s.last_name}}</td>
+    </tr>  
+    {% endfor %}
+
+</table>
+<table class="table table-dark table-striped"> 
+    
+    {% for c in coachs %}
+    <tr>
+    <td>{{c.first_name}}</td>
+    <td>{{c.last_name}}</td>
+    </tr>
+    {% endfor %}
+
+</table>
+
+{% endblock content %}
