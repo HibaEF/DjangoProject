@@ -22,10 +22,25 @@
           <li class="nav-item">
             <a class="nav-link disabled">Disabled</a>
           </li>
+
+          {% if user.is_authenticated %}
+          <li class="nav-item">
+            <a class="nav-link " href="{% url 'logout' %}">Logout</a>
+          </li>
+          {% else %}
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'login' %}">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link ">Register</a>
+          </li>
+
+          {% endif %}
+
         </ul>
         
         <span class="navbar-text">
-            {{greetings }} {{username| default:"Visitor"}}
+            {{greetings }} {{user.username| default:"Visitor"}}
         </span>
         
       </div>

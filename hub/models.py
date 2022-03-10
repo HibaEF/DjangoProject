@@ -24,6 +24,9 @@ class User(models.Model):
     
 class Student(User):
     pass
+    #2eme methode de redirection :
+    # def get_success_url(self):
+    #     return redirect('listStudent1')
 class Coach(User):
     pass
 class Projet(models.Model):
